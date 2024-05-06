@@ -1,0 +1,21 @@
+﻿{
+  "name": "be.zsoft.zscore.sdk",
+  "version": "0.0.1",
+  "displayName": "Z-Score SDK",
+  "description": "The SDK for using Z-Score",
+  "unity": "2022.3",
+  "dependencies": {
+    
+  },
+  "keywords": [
+    "zscore",
+    "z-score",
+    "gaming backend",
+    "backend"
+  ],
+  "author": {
+    "name": "Z-Soft",
+    "email": "info@z-soft.be",
+    "url": "https://z-soft.be"
+  }
+}
