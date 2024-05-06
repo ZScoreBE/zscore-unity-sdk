@@ -1,6 +1,6 @@
 ﻿using zscore_unity_sdk.Dto.Response.Player;
 
-namespace zscore_unity_sdk.Dto.Response.leaderboard
+namespace zscore_unity_sdk.Dto.Response.Leaderboard
 {
     public class LeaderboardScoreResponse
     {

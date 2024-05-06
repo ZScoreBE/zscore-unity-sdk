@@ -2,7 +2,7 @@
 using System.Collections;
 using zscore_unity_sdk.Client;
 using zscore_unity_sdk.Dto.Response.Common;
-using zscore_unity_sdk.Dto.Response.leaderboard;
+using zscore_unity_sdk.Dto.Response.Leaderboard;
 
 namespace zscore_unity_sdk.Handler
 {

@@ -1,0 +1,26 @@
+{
+    "name": "zscore-unity-sdk",
+    "rootNamespace": "zscore-unity-sdk",
+    "references": [
+        "zscore-unity-sdk.Client",
+        "zscore-unity-sdk.Dto.Request.Leaderboard",
+        "zscore-unity-sdk.Dto.Request.Player",
+        "zscore-unity-sdk.Dto.Response.Achievement",
+        "zscore-unity-sdk.Dto.Response.Common",
+        "zscore-unity-sdk.Dto.Response.Leaderboard",
+        "zscore-unity-sdk.Dto.Response.Player",
+        "zscore-unity-sdk.Exception",
+        "zscore-unity-sdk.Handler",
+        "zscore_unity_sdk.Libs.ZeroDepJson",
+        "zscore_unity_sdk.Utils"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

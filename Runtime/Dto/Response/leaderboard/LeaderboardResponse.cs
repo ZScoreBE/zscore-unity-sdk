@@ -1,4 +1,4 @@
-﻿namespace zscore_unity_sdk.Dto.Response.leaderboard
+﻿namespace zscore_unity_sdk.Dto.Response.Leaderboard
 {
     public class LeaderboardResponse
     {
