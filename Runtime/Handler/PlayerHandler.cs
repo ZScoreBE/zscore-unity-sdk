@@ -19,5 +19,22 @@ namespace zscore_unity_sdk.Handler
         {
             return Post("/external/players", playerRequest, onSuccess, onError, SecurityType.API_KEY);
         }
+
+        public IEnumerator GetCurrentPlayer(Action<PlayerResponse> onSuccess, Action<ZScoreErrorResponse> onError)
+        {
+            return Get("/external/players/myself", onSuccess, onError, SecurityType.API_KEY);
+        }
+
+        public IEnumerator TakeLivesFromCurrentPlayer(Action<PlayerResponse> onSuccess,
+            Action<ZScoreErrorResponse> onError, int amount = 1)
+        {
+            return Patch($"/external/players/myself/take-life?amount={amount}", null, onSuccess, onError, SecurityType.API_KEY);
+        }
+        
+        public IEnumerator GiveLivesFromCurrentPlayer(Action<PlayerResponse> onSuccess,
+            Action<ZScoreErrorResponse> onError, int amount = 1)
+        {
+            return Patch($"/external/players/myself/give-life?amount={amount}", null, onSuccess, onError, SecurityType.API_KEY);
+        }
     }
 }
