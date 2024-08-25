@@ -37,5 +37,10 @@ namespace zscore_unity_sdk.Client
         {
             return new CurrenciesHandler(this);
         }
+
+        public TriggerHandler Triggers()
+        {
+            return new TriggerHandler(this);
+        }
     }
 }

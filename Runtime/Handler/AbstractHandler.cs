@@ -44,6 +44,22 @@ namespace zscore_unity_sdk.Handler
 
             HandleResponse(request, onSuccess, onError);
         }
+        
+        protected IEnumerator PostNoContent(string uri, object body, Action onSuccess,
+            Action<ZScoreErrorResponse> onError, SecurityType securityType = SecurityType.JWT_TOKEN)
+        {
+            UnityWebRequest request = createBaseRequest(uri, UnityWebRequest.kHttpVerbPOST, securityType);
+
+            if (body != null)
+            {
+                string jsonBody = JsonUtils.Serialize(body);
+                request.uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(jsonBody));
+            }
+
+            yield return request.SendWebRequest();
+
+            HandleResponseNoContent(request, onSuccess, onError);
+        }
 
         protected IEnumerator Get<T>(string uri, Action<T> onSuccess,
             Action<ZScoreErrorResponse> onError, SecurityType securityType = SecurityType.JWT_TOKEN)
@@ -118,6 +134,20 @@ namespace zscore_unity_sdk.Handler
             {
                 T response = JsonUtils.Deserialize<T>(request.downloadHandler.text);
                 onSuccess?.Invoke(response);
+            }
+            else
+            {
+                ZScoreErrorResponse response = JsonUtils.Deserialize<ZScoreErrorResponse>(request.downloadHandler.text);
+                onError?.Invoke(response);
+            }
+        }
+        
+        private static void HandleResponseNoContent(UnityWebRequest request, Action onSuccess,
+            Action<ZScoreErrorResponse> onError)
+        {
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                onSuccess?.Invoke();
             }
             else
             {
