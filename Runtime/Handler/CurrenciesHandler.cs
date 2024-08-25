@@ -12,13 +12,13 @@ namespace zscore_unity_sdk.Handler
         {
         }
 
-        public IEnumerator getCurrencies(int page, Action<Page<CurrencyResponse>> onSuccess,
+        public IEnumerator GetCurrencies(int page, Action<Page<CurrencyResponse>> onSuccess,
             Action<ZScoreErrorResponse> onError)
         {
             return Get($"/external/currencies?page={page}&size{ZScoreClient.DEFAULT_PAGE_SIZE}", onSuccess, onError);
         }
 
-        public IEnumerator getCurrencyOffers(string currencyId, int page, Action<Page<CurrencyOfferResponse>> onSuccess,
+        public IEnumerator GetCurrencyOffers(string currencyId, int page, Action<Page<CurrencyOfferResponse>> onSuccess,
             Action<ZScoreErrorResponse> onError)
         {
             return Get($"/external/currencies/{currencyId}/offers?page={page}&size{ZScoreClient.DEFAULT_PAGE_SIZE}",

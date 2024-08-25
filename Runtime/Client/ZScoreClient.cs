@@ -42,5 +42,10 @@ namespace zscore_unity_sdk.Client
         {
             return new TriggerHandler(this);
         }
+
+        public WalletHandler Wallets()
+        {
+            return new WalletHandler(this);
+        }
     }
 }
