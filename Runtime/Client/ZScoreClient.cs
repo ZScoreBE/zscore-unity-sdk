@@ -32,5 +32,10 @@ namespace zscore_unity_sdk.Client
         {
             return new AchievementHandler(this);
         }
+
+        public CurrenciesHandler Currencies()
+        {
+            return new CurrenciesHandler(this);
+        }
     }
 }
