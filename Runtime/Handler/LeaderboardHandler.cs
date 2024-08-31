@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using zscore_unity_sdk.Client;
+using zscore_unity_sdk.Dto.Request.Leaderboard;
 using zscore_unity_sdk.Dto.Response.Common;
 using zscore_unity_sdk.Dto.Response.Leaderboard;
 
@@ -29,6 +30,13 @@ namespace zscore_unity_sdk.Handler
             Action<ZScoreErrorResponse> onError)
         {
             return Get($"/external/leaderboards/{leaderboardId}/scores?page={page}&size{ZScoreClient.DEFAULT_PAGE_SIZE}", onSuccess, onError);
+        }
+
+        public IEnumerator CreateLeaderboardScore(string leaderboardId, int score,
+            Action<LeaderboardScoreResponse> onSuccess, Action<ZScoreErrorResponse> onError)
+        {
+            LeaderboardScoreRequest request = new LeaderboardScoreRequest { score = score };
+            return Post($"/external/leaderboards/{leaderboardId}/scores", request, onSuccess, onError);
         }
     }
 }
