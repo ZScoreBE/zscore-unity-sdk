@@ -6,6 +6,6 @@ namespace zscore_unity_sdk.Dto.Response.Leaderboard
     {
         public string id { get; set; }
         public int score { get; set; }
-        public PlayerResponse player { get; set; }g
+        public PlayerResponse player { get; set; }
     }
 }
