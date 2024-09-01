@@ -7,5 +7,7 @@ namespace zscore_unity_sdk.Dto.Response.Player
         public string id { get; set; }
         public string name { get; set; }
         public DateTime lastSignIn { get; set; }
+        public int? lives { get; set; }
+        public DateTime lastLifeUpdate { get; set; }
     }
 }
